@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SD Enterprise Website
 
-## Getting Started
+A professional website for **SD Enterprise** — Professional Interior Contractors & Ceiling/Aluminium Specialists, established in 2008.
 
-First, run the development server:
+## What is this project?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is a deployment-ready company website built with **Next.js** and **Tailwind CSS**. It includes:
+
+- **Home** – Hero, services overview, why choose us, gallery preview
+- **About** – Company history, mission, vision, strengths
+- **Services** – Main services page + 5 detailed service sub-pages
+- **Gallery** – Project gallery with category filters
+- **Contact** – Contact form and details
+- **Click-to-call** – Floating call button on all pages (mobile-friendly)
+
+## Prerequisites (What you need before starting)
+
+- **Node.js** (version 18 or higher) – [Download from nodejs.org](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- A code editor like **VS Code** or **Cursor**
+
+## Quick Start (Run locally)
+
+1. **Open the project folder** in your terminal:
+   ```bash
+   cd sd-enterprise
+   ```
+
+2. **Install dependencies** (first time only):
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser** and go to: [http://localhost:3000](http://localhost:3000)
+
+## Project Structure (For beginners)
+
+```
+sd-enterprise/
+├── src/
+│   ├── app/              # Pages (each folder = a route)
+│   │   ├── page.tsx      # Home page (/)
+│   │   ├── about/        # About page (/about)
+│   │   ├── services/     # Services pages (/services, /services/[slug])
+│   │   ├── gallery/      # Gallery page (/gallery)
+│   │   └── contact/      # Contact page (/contact)
+│   ├── components/       # Reusable UI components
+│   └── lib/
+│       └── constants.ts  # Company info, services data
+├── public/               # Static files (images, etc.)
+├── package.json          # Dependencies and scripts
+└── README.md             # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contact Form Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The contact form uses **Formspree** (free tier) to send emails. To enable it:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Go to [formspree.io](https://formspree.io) and create a free account
+2. Create a new form and copy the form ID (e.g. `xyzabcde`)
+3. Create a file named `.env.local` in the project root:
+   ```
+   NEXT_PUBLIC_FORMSPREE_ID=your_form_id_here
+   ```
+4. Restart the dev server (`npm run dev`)
 
-## Learn More
+Without this, the form will show an alert asking you to configure it.
 
-To learn more about Next.js, take a look at the following resources:
+## Adding Real Photos to Gallery
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Add your project photos to `public/gallery/` folder
+2. Update the gallery page to use real images instead of placeholders (see `src/app/gallery/page.tsx`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Useful Commands
 
-## Deploy on Vercel
+| Command        | What it does                    |
+|----------------|----------------------------------|
+| `npm run dev`  | Start development server        |
+| `npm run build`| Build for production            |
+| `npm run start`| Run production build locally    |
+| `npm run lint` | Check code for errors           |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See **[DEPLOYMENT_STEPS.md](./DEPLOYMENT_STEPS.md)** for detailed deployment instructions (Vercel, Netlify, etc.).
+
+## Tech Stack
+
+- **Next.js 16** – React framework
+- **TypeScript** – Type-safe JavaScript
+- **Tailwind CSS** – Utility-first styling
+
+## Support
+
+For questions about the website content, contact SD Enterprise at **9417008514** or **shantideep111@gmail.com**.
