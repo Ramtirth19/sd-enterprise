@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SERVICE_FORM_OPTIONS } from "@/lib/constants";
+import { COMPANY, SERVICE_FORM_OPTIONS } from "@/lib/constants";
 
 const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ID
   ? `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`
@@ -43,7 +43,7 @@ export default function ContactForm() {
     return (
       <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
         <p className="text-green-800 font-medium text-lg">
-          Thank you for contacting SD Enterprise. Our team will contact you shortly.
+          Thank you for contacting {COMPANY.name}. Our team will contact you shortly.
         </p>
       </div>
     );

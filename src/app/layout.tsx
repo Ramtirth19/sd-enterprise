@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   },
   description: `${COMPANY.tagline}. Professional false ceiling, aluminium partition, glass partition, and interior finishing services across Haryana since ${COMPANY.established}.`,
   keywords: ["false ceiling", "aluminium partition", "glass partition", "interior contractors", "Haryana", "ceiling specialists"],
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
     type: "website",
   },

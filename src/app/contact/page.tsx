@@ -2,7 +2,7 @@ import { COMPANY } from "@/lib/constants";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact SD Enterprise",
+  title: `Contact ${COMPANY.name}`,
   description: `Contact ${COMPANY.name} for false ceiling, aluminium partition, glass work, fabrication, and interior services. Free consultation and site visits by appointment across Haryana.`,
 };
 

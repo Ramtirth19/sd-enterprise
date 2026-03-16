@@ -1,6 +1,6 @@
-# SD Enterprise Website
+# SD Enterprises Website
 
-A professional website for **SD Enterprise** — Professional Interior Contractors & Ceiling/Aluminium Specialists, established in 2008.
+A professional website for **SD Enterprises** — Professional Interior Contractors & Ceiling/Aluminium Specialists, established in 2008.
 
 ## What is this project?
 
@@ -71,10 +71,26 @@ The contact form uses **Formspree** (free tier) to send emails. To enable it:
 
 Without this, the form will show an alert asking you to configure it.
 
-## Adding Real Photos to Gallery
+## Adding Real Photos to Gallery (with Filters)
 
-1. Add your project photos to `public/gallery/` folder
-2. Update the gallery page to use real images instead of placeholders (see `src/app/gallery/page.tsx`)
+To make gallery filters work with your images:
+
+1. **Create category folders** in `public/gallery/` matching these ids:
+   - `gypsum/` – Gypsum False Ceiling
+   - `tgrid/` – T-Grid Ceiling
+   - `metal/` – Metal Ceiling
+   - `aluminium/` – Aluminium Partition & Doors
+   - `glass/` – Glass Partition
+   - `fabrication/` – MS Fabrication Framework
+   - `painting/` – Painting & Wallpaper
+
+2. **Add your project images** to the appropriate folder (e.g. `public/gallery/gypsum/office1.jpg`).
+
+3. **Register each image** in `src/lib/gallery.ts` by adding to the `GALLERY_IMAGES` array:
+   ```ts
+   { src: "/gallery/gypsum/office1.jpg", category: "gypsum", alt: "Office gypsum ceiling" },
+   ```
+   The `category` must match the folder id so filters work correctly.
 
 ## Useful Commands
 
@@ -97,4 +113,4 @@ See **[DEPLOYMENT_STEPS.md](./DEPLOYMENT_STEPS.md)** for detailed deployment ins
 
 ## Support
 
-For questions about the website content, contact SD Enterprise at **9417008514** or **shantideep111@gmail.com**.
+For questions about the website content, contact SD Enterprises at **9417008514** or **shantideep111@gmail.com**.

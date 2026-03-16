@@ -1,5 +1,5 @@
 export const COMPANY = {
-  name: "SD Enterprise",
+  name: "SD Enterprises",
   legalName: "Toonwal and Sons",
   tagline: "Professional Interior Contractors & Ceiling/Aluminium Specialists",
   established: 2008,
@@ -25,7 +25,7 @@ export const SERVICES = [
     title: "False Ceiling Contractors",
     shortDesc: "Modern false ceiling solutions for commercial and residential projects",
     icon: "ceiling",
-    content: `SD Enterprise specializes in modern false ceiling solutions for commercial and residential projects. Our ceilings improve appearance, hide wiring, and enhance lighting design.`,
+    content: `SD Enterprises specializes in modern false ceiling solutions for commercial and residential projects. Our ceilings improve appearance, hide wiring, and enhance lighting design.`,
     items: [
       {
         name: "Gypsum False Ceiling",

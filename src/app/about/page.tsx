@@ -2,8 +2,8 @@ import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
 export const metadata = {
-  title: "About SD Enterprise",
-  description: `Professional Interior Contractors & Ceiling Specialists since ${COMPANY.established}. Learn about SD Enterprise, our mission, vision, and experience.`,
+  title: `About ${COMPANY.name}`,
+  description: `Professional Interior Contractors & Ceiling Specialists since ${COMPANY.established}. Learn about ${COMPANY.name}, our mission, vision, and experience.`,
 };
 
 export default function AboutPage() {

@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { COMPANY, GALLERY_CATEGORIES } from "@/lib/constants";
+import { GALLERY_IMAGES } from "@/lib/gallery";
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState<string | null>(null);
 
-  // Placeholder images - replace with real project photos in /public/gallery/
+  // Use real images from GALLERY_IMAGES when available, otherwise placeholders
+  const hasRealImages = GALLERY_IMAGES.length > 0;
   const placeholderCount = 45;
   const placeholders = Array.from({ length: placeholderCount }, (_, i) => ({
     id: i + 1,
@@ -14,9 +17,16 @@ export default function GalleryPage() {
     label: GALLERY_CATEGORIES[i % GALLERY_CATEGORIES.length].name,
   }));
 
-  const filtered = filter
-    ? placeholders.filter((p) => p.category === filter)
+  const items = hasRealImages
+    ? GALLERY_IMAGES.map((img, i) => ({
+        id: i + 1,
+        src: img.src,
+        category: img.category,
+        label: img.alt ?? GALLERY_CATEGORIES.find((c) => c.id === img.category)?.name ?? "Project",
+      }))
     : placeholders;
+
+  const filtered = filter ? items.filter((p) => p.category === filter) : items;
 
   return (
     <div>
@@ -60,11 +70,21 @@ export default function GalleryPage() {
               key={item.id}
               className="aspect-square rounded-lg overflow-hidden bg-stone-200 group cursor-pointer"
             >
-              <div className="w-full h-full bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-4 text-center group-hover:from-stone-400 group-hover:to-stone-500 transition-colors">
-                <span className="text-stone-600 text-sm font-medium group-hover:text-white">
-                  {item.label}
-                </span>
-              </div>
+              {"src" in item ? (
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-4 text-center group-hover:from-stone-400 group-hover:to-stone-500 transition-colors">
+                  <span className="text-stone-600 text-sm font-medium group-hover:text-white">
+                    {item.label}
+                  </span>
+                </div>
+              )}
             </div>
           ))}
         </div>

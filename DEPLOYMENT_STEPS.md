@@ -1,6 +1,6 @@
-# Deployment Steps for SD Enterprise Website
+# Deployment Steps for SD Enterprises Website
 
-This guide walks you through deploying the SD Enterprise website to the internet. Choose one of the options below.
+This guide walks you through deploying the SD Enterprises website to the internet. Choose one of the options below.
 
 ---
 
@@ -24,7 +24,7 @@ Vercel is free and works great with Next.js.
    cd sd-enterprise
    git init
    git add .
-   git commit -m "Initial commit - SD Enterprise website"
+   git commit -m "Initial commit - SD Enterprises website"
    ```
 
 4. On GitHub, click **New Repository**, name it `sd-enterprise`, and create it
