@@ -25,21 +25,21 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <div>
-      <section className="bg-stone-900 text-white py-16">
+      <section className="bg-brand-900 text-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">{service.title}</h1>
         </div>
       </section>
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
-        <p className="text-stone-600 text-lg mb-8">{service.content}</p>
+        <p className="text-slate-600 text-lg mb-8">{service.content}</p>
 
         <div className="space-y-8 mb-12">
           {service.items.map((item) => (
-            <div key={item.name} className="border-l-4 border-amber-500 pl-6">
-              <h3 className="font-semibold text-stone-800 mb-2">{item.name}</h3>
+            <div key={item.name} className="border-l-4 border-brand-600 pl-6">
+              <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
               {item.points.length > 0 && (
-                <ul className="space-y-1 text-stone-600">
+                <ul className="space-y-1 text-slate-600">
                   {item.points.map((p) => (
                     <li key={p}>• {p}</li>
                   ))}
@@ -50,22 +50,22 @@ export default async function ServicePage({ params }: Props) {
         </div>
 
         {(service as { note?: string }).note && (
-          <p className="text-stone-600 italic mb-12">{(service as { note?: string }).note}</p>
+          <p className="text-slate-600 italic mb-12">{(service as { note?: string }).note}</p>
         )}
 
         {/* CTA - No WhatsApp per user request */}
-        <div className="bg-amber-50 rounded-xl p-8 border border-amber-100 text-center">
-          <h3 className="text-xl font-bold text-stone-800 mb-2">Get Free Site Visit and Quote</h3>
+        <div className="bg-brand-50 rounded-xl p-8 border border-brand-100 text-center">
+          <h3 className="text-xl font-bold text-slate-800 mb-2">Get Free Site Visit and Quote</h3>
           <a
             href={`tel:${COMPANY.phone}`}
-            className="inline-flex items-center px-8 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors"
+            className="inline-flex items-center px-8 py-3 bg-brand-800 text-white font-semibold rounded-lg hover:bg-brand-700 transition-colors"
           >
             Call: {COMPANY.phone}
           </a>
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services" className="text-amber-700 font-medium hover:text-amber-800">
+          <Link href="/services" className="text-brand-800 font-medium hover:text-brand-700">
             ← Back to All Services
           </Link>
         </div>

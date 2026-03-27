@@ -30,10 +30,10 @@ export default function GalleryPage() {
 
   return (
     <div>
-      <section className="bg-stone-900 text-white py-16">
+      <section className="bg-brand-900 text-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Gallery & Our Projects</h1>
-          <p className="text-stone-300 max-w-2xl">
+          <p className="text-brand-200 max-w-2xl">
             {COMPANY.name} has successfully completed numerous false ceiling, aluminium partition, glass, and interior projects since {COMPANY.established}. Here are some of our recent project works completed across Haryana.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function GalleryPage() {
           <button
             onClick={() => setFilter(null)}
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              !filter ? "bg-amber-600 text-white" : "bg-stone-200 text-stone-700 hover:bg-stone-300"
+              !filter ? "bg-brand-800 text-white" : "bg-brand-100 text-brand-900 hover:bg-brand-200"
             }`}
           >
             All
@@ -55,7 +55,7 @@ export default function GalleryPage() {
               key={cat.id}
               onClick={() => setFilter(cat.id)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                filter === cat.id ? "bg-amber-600 text-white" : "bg-stone-200 text-stone-700 hover:bg-stone-300"
+                filter === cat.id ? "bg-brand-800 text-white" : "bg-brand-100 text-brand-900 hover:bg-brand-200"
               }`}
             >
               {cat.name}
@@ -68,7 +68,7 @@ export default function GalleryPage() {
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="aspect-square rounded-lg overflow-hidden bg-stone-200 group cursor-pointer"
+              className="aspect-square rounded-lg overflow-hidden bg-brand-100 group cursor-pointer"
             >
               {"src" in item ? (
                 <Image
@@ -79,8 +79,8 @@ export default function GalleryPage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-4 text-center group-hover:from-stone-400 group-hover:to-stone-500 transition-colors">
-                  <span className="text-stone-600 text-sm font-medium group-hover:text-white">
+                <div className="w-full h-full bg-gradient-to-br from-brand-200 to-brand-300 flex items-center justify-center p-4 text-center group-hover:from-brand-300 group-hover:to-brand-500 transition-colors">
+                  <span className="text-brand-900 text-sm font-medium group-hover:text-white">
                     {item.label}
                   </span>
                 </div>
@@ -90,9 +90,9 @@ export default function GalleryPage() {
         </div>
 
         {/* Trust Line */}
-        <p className="text-center text-stone-600 mt-12 font-medium">
+        <p className="text-center text-slate-600 mt-12 font-medium">
           For similar work, contact {COMPANY.name} at{" "}
-          <a href={`tel:${COMPANY.phone}`} className="text-amber-600 hover:text-amber-700 font-semibold">
+          <a href={`tel:${COMPANY.phone}`} className="text-brand-800 hover:text-brand-700 font-semibold">
             {COMPANY.phone}
           </a>
         </p>

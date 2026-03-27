@@ -6,7 +6,7 @@ export default function CallButton() {
   return (
     <a
       href={`tel:${COMPANY.phone}`}
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-amber-600 text-white shadow-lg hover:bg-amber-700 transition-all hover:scale-110"
+      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-brand-800 text-white shadow-lg hover:bg-brand-700 transition-all hover:scale-110"
       aria-label="Call now"
     >
       <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

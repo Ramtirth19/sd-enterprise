@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
+/* Palette matched to public/logo.png: deep navy disc + silver artwork */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #152338;
 }
 
 @theme inline {
@@ -10,8 +11,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-brand-950: #0c1522;
+  --color-brand-900: #152338;
+  --color-brand-800: #1d314f;
+  --color-brand-700: #2a4568;
+  --color-brand-600: #3d5d85;
+  --color-brand-500: #4d6f9a;
+  --color-brand-300: #9aacbf;
+  --color-brand-200: #c5ced9;
+  --color-brand-100: #e2e8f0;
+  --color-brand-50: #f1f4f8;
+  --color-accent: #b8c5d6;
 }
-
 
 body {
   background: var(--background);

@@ -16,15 +16,15 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="block p-6 bg-white rounded-xl border border-stone-200 shadow-sm hover:shadow-md hover:border-amber-200 transition-all group"
+      className="block p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-200 transition-all group"
     >
-      <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4 group-hover:bg-amber-200 transition-colors">
-        <svg className="w-6 h-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="w-12 h-12 rounded-lg bg-brand-100 flex items-center justify-center mb-4 group-hover:bg-brand-200 transition-colors">
+        <svg className="w-6 h-6 text-brand-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={path} />
         </svg>
       </div>
-      <h3 className="text-lg font-semibold text-stone-800 mb-2">{service.title}</h3>
-      <p className="text-stone-600 text-sm">{service.shortDesc}</p>
+      <h3 className="text-lg font-semibold text-slate-800 mb-2">{service.title}</h3>
+      <p className="text-slate-600 text-sm">{service.shortDesc}</p>
     </Link>
   );
 }
